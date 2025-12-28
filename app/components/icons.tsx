@@ -21,5 +21,79 @@ export const CrownIcon = ({ size, color, stroke }: Props) => (
         <path d="M6.5 22H17.5" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
         <path d="M9.5 14H14.5" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+);
 
+export const BuildingIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 21H21" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 21V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H17C17.5304 3 18.0391 3.21071 18.4142 3.58579C18.7893 3.96086 19 4.46957 19 5V21" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 7H15" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 11H15" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 15H15" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const TowerIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2V22" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 5H17V9H7V5Z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 10H19V14H5V10Z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M7 15H17V19H7V15Z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="5" r="1.5" className={color} fill="currentColor" />
+        <circle cx="9" cy="12" r="1.5" className={color} fill="currentColor" />
+        <circle cx="15" cy="12" r="1.5" className={color} fill="currentColor" />
+    </svg>
+);
+
+export const ChartIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 21H21" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 17V10" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 17V5" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M19 17V8" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const WrenchIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.7 6.3A1 1 0 0 0 13.4 4H7a1 1 0 0 0 0 2h6.4a1 1 0 0 0 1.3-1.7z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M15 13v5a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-5m18-4a8 8 0 0 0-8-8" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="18" cy="6" r="3" className={color} strokeWidth={stroke ? stroke : "1.5"} />
+    </svg>
+);
+
+export const PencilIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const CheckCircleIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M22 4L12 14.01l-3-3" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const HeartIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const LeafIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 20A7 7 0 0 0 9.8 6.1C15.5 5 21 1 21 1s-6 5.5-7.1 11.2A7 7 0 0 0 11 20z" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9.8 6.1H9.9" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const UsersIcon = ({ size, color, stroke }: Props) => (
+    <svg className={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="9" cy="7" r="4" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" className={color} strokeWidth={stroke ? stroke : "1.5"} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
 );
