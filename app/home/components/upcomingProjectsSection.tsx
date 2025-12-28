@@ -61,9 +61,10 @@ const UpcomingProjectsSection = () => {
                             custom={index}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: '-100px' }}
+                            viewport={{ once: true, amount: 0.2 }}
                             variants={cardVariants}
                             className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                            style={{ willChange: 'transform' }}
                         >
                             <div className="aspect-video bg-linear-to-br from-blue-500/10 to-purple-500/10 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
