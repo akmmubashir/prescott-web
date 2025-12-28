@@ -58,7 +58,7 @@ const HeroSection = () => {
                 aria-hidden
                 className='absolute inset-0 bg-no-repeat bg-cover bg-center'
                 style={{
-                    backgroundImage: "url(/assets/common/hero-img.png)",
+                    backgroundImage: "url(/assets/common/hero-img.webp)",
                     filter: 'grayscale(10%) brightness(50%)',
                 }}
                 variants={backgroundVariants}

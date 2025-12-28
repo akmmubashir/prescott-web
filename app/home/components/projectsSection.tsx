@@ -12,7 +12,7 @@ const projects = [
         type: 'Luxury Residence',
         description:
             'An iconic 45-story residential tower featuring world-class amenities, smart home integration, and panoramic views of the Arabian Gulf. Each unit is meticulously designed with premium finishes and sustainable building practices.',
-        image: '/assets/common/hero-img.png',
+        image: '/assets/common/hero-img.webp',
         highlights: ['45 Floors', '350+ Units', 'Smart Home', 'Gym & Spa'],
     },
     {
@@ -22,7 +22,7 @@ const projects = [
         type: 'Mixed-Use Development',
         description:
             'A vibrant mixed-use development combining residential apartments, retail spaces, and fine dining restaurants. Designed to create a dynamic urban lifestyle with direct beach access and world-class entertainment venues.',
-        image: '/assets/common/hero-img.png',
+        image: '/assets/common/hero-img.webp',
         highlights: ['500+ Residences', 'Retail Spaces', 'Beachfront', 'Fine Dining'],
     },
     {
@@ -32,7 +32,7 @@ const projects = [
         type: 'Ultra-Luxury Villas',
         description:
             'Exclusive collection of ultra-luxury villas with private pools, smart automation, and lush landscaping. Each villa is a masterpiece of architectural excellence overlooking pristine golf courses and the Emirates Golf Club.',
-        image: '/assets/common/hero-img.png',
+        image: '/assets/common/hero-img.webp',
         highlights: ['Limited Units', 'Private Pools', 'Golf Views', 'Smart Living'],
     },
     {
@@ -42,7 +42,7 @@ const projects = [
         type: 'Premium Apartments',
         description:
             'Strategic location in the heart of Downtown Dubai, offering modern apartments with contemporary design, sustainable features, and direct access to shopping, dining, and business districts. Urban living redefined.',
-        image: '/assets/common/hero-img.png',
+        image: '/assets/common/hero-img.webp',
         highlights: ['200+ Units', 'City View', 'Modern Design', 'Central Location'],
     },
 ]
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
 
         const mm = gsap.matchMedia()
 
-        function setup(opts: { rotY: number; y: number; scaleOut: number; scaleIn: number }) {
+        function setup(opts: { y: number; scaleOut: number; scaleIn: number; step: number }) {
             if (!containerRef.current) return
 
             const slides = gsap.utils.toArray<HTMLElement>(containerRef.current.querySelectorAll('.project-slide'))
@@ -65,16 +65,15 @@ const ProjectsSection = () => {
             gsap.set(slides, { willChange: 'transform', transformPerspective: 1000 })
             gsap.set(slides.slice(1), { autoAlpha: 0 })
 
-            const track = containerRef.current.parentElement as HTMLElement
-            const endDistance = (track?.offsetHeight || window.innerHeight) - window.innerHeight
-
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top top',
-                    end: `+=${endDistance}`,
+                    end: `+=${Math.max(slides.length - 1, 0) * opts.step}`,
                     pin: true,
+                    pinSpacing: true,
                     scrub: 0.25,
+                    anticipatePin: 1,
                     snap: { snapTo: 1 / Math.max(slides.length - 1, 1), duration: 0.35, ease: 'power2.out', directional: true },
                 },
             })
@@ -82,8 +81,8 @@ const ProjectsSection = () => {
             slides.forEach((slide, i) => {
                 if (i === slides.length - 1) return
                 const next = slides[i + 1]
-                tl.to(slide, { autoAlpha: 0, yPercent: -opts.y, rotateY: -opts.rotY, scale: opts.scaleOut, duration: 0.5, ease: 'power3.inOut' }, `step-${i}`)
-                    .fromTo(next, { autoAlpha: 0, yPercent: opts.y, rotateY: opts.rotY, scale: opts.scaleIn }, { autoAlpha: 1, yPercent: 0, rotateY: 0, scale: 1, duration: 0.5, ease: 'power3.inOut' }, `step-${i}`)
+                tl.to(slide, { autoAlpha: 0, yPercent: -opts.y, scale: opts.scaleOut, duration: 0.5, ease: 'power2.inOut' }, `step-${i}`)
+                    .fromTo(next, { autoAlpha: 0, yPercent: opts.y, scale: opts.scaleIn }, { autoAlpha: 1, yPercent: 0, scale: 1, duration: 0.5, ease: 'power2.inOut' }, `step-${i}`)
 
                 const inner = Array.from(next.querySelectorAll('.anim-in')) as HTMLElement[]
                 if (inner.length) {
@@ -97,24 +96,23 @@ const ProjectsSection = () => {
             }
         }
 
-        mm.add('(max-width: 768px)', () => setup({ rotY: 6, y: 5, scaleOut: 0.96, scaleIn: 0.98 }))
-        mm.add('(min-width: 769px)', () => setup({ rotY: 10, y: 7, scaleOut: 0.95, scaleIn: 0.98 }))
+        mm.add('(max-width: 768px)', () => setup({ y: 4, scaleOut: 0.97, scaleIn: 0.99, step: Math.round(window.innerHeight * 0.9) }))
+        mm.add('(min-width: 769px)', () => setup({ y: 5, scaleOut: 0.96, scaleIn: 0.99, step: Math.round(window.innerHeight * 0.85) }))
 
         return () => mm.revert()
     }, [])
 
     return (
         <section id="projects" className="relative w-full bg-[#0f1a1c]">
-            {/* Track height controls how long you scroll while pinned */}
-            <div style={{ height: `${projects.length * 90}vh` }}>
-                <div ref={containerRef} className="sticky top-0 h-screen w-full overflow-hidden">
-                    {projects.map((project, idx) => (
-                        <div key={project.id} className="project-slide absolute inset-0">
+            {/* Pinned container; ScrollTrigger adds pin spacing for scroll length */}
+            <div ref={containerRef} className="sticky top-0 h-screen w-full overflow-hidden">
+                {projects.map((project, idx) => (
+                    <div key={project.id} className="project-slide absolute inset-0">
                             {/* Background image */}
-                            <div className="absolute inset-0 bg-media">
-                                <Image src={project.image} alt={project.title} fill className="object-cover" priority={idx === 0} />
-                                <div className="absolute inset-0 bg-linear-to-r from-[#0f1a1c]/95 via-[#0f1a1c]/70 to-transparent" />
-                            </div>
+                        <div className="absolute inset-0 bg-media">
+                            <Image src={project.image} alt={project.title} fill className="object-cover" priority={idx === 0} />
+                            <div className="absolute inset-0 bg-linear-to-r from-[#0f1a1c]/95 via-[#0f1a1c]/70 to-transparent" />
+                        </div>
 
                             {/* Content */}
                             <div className="relative h-full max-w-300 mx-auto p-8 max-lg:p-6 max-md:p-5 flex flex-col justify-between">
@@ -148,14 +146,14 @@ const ProjectsSection = () => {
                                     <p className="anim-in text-white/70 text-[18px] max-lg:text-[16px] max-md:text-[15px] leading-relaxed max-w-2xl">
                                         {project.description}
                                     </p>
-                                    {/* <motion.div variants={fadeIn} initial="hidden" animate="visible" className="grid grid-cols-2 max-md:grid-cols-1 gap-3 pt-4">
+                                    <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3 pt-4">
                                         {project.highlights.map((highlight) => (
-                                            <div key={highlight} className="flex items-center gap-2 text-white/80 text-sm">
+                                            <div key={highlight} className="anim-in flex items-center gap-2 text-white/80 text-sm">
                                                 <div className="h-1.5 w-1.5 rounded-full bg-white/50" />
                                                 <span>{highlight}</span>
                                             </div>
                                         ))}
-                                    </motion.div> */}
+                                    </div>
                                 </div>
 
                                 {/* Footer actions */}
@@ -173,9 +171,8 @@ const ProjectsSection = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </section>
     )

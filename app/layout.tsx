@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/assets/common/hero-img.png",
+        url: "/assets/common/hero-img.webp",
         width: 1200,
         height: 630,
         alt: "Prescott Properties | Luxury Properties in Dubai",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Prescott Properties | Luxury Properties in Dubai",
     description:
       "Prescott is your trusted partner for luxury properties in Dubai. Discover your dream home with us.",
-    images: ["/assets/common/hero-img.png"],
+    images: ["/assets/common/hero-img.webp"],
 
   },
 
