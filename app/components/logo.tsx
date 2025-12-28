@@ -8,7 +8,7 @@ type Props = {
 
 const Logo = (props: Props) => {
     return (
-        <div className='w-50 max-md:w-40'>
+        <div className='w-50 max-md:w-30'>
             <Link href="/">
                 <Image
                     src={props.color === 'white' ? '/assets/common/logo-white.png' : '/assets/common/logo-black.png'}

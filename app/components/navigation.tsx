@@ -13,7 +13,7 @@ const Navigation = (props: Props) => {
     ];
     return (
         <div className='flex gap-5 uppercase max-xl:hidden'>{navigationData.map((item) => (
-            <Link key={item.name} href={item.href} className={`text-[16px] ${props.type === "transparent" ? "text-white hover:text-[#244952]" : "text-[#160A0A] hover:text-[#244952]"} ${props.type === "scroll" ? "font-medium" : ""}`}>{item.name}</Link>
+            <Link key={item.name} href={item.href} className={`text-[16px] ${props.type === "transparent" ? "text-white hover:text-[#d5d5d5]" : "text-[#160A0A] hover:text-[#244952]"} ${props.type === "scroll" ? "font-medium" : ""}`}>{item.name}</Link>
         ))}</div>
     )
 }
