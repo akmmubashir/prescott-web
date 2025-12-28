@@ -47,10 +47,9 @@ const projects = [
     },
 ]
 
-// Removed Framer Motion variants; GSAP will drive all animations
-
 const ProjectsSection = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
+    const [currentSlide, setCurrentSlide] = React.useState(0)
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -75,6 +74,11 @@ const ProjectsSection = () => {
                     scrub: 0.25,
                     anticipatePin: 1,
                     snap: { snapTo: 1 / Math.max(slides.length - 1, 1), duration: 0.35, ease: 'power2.out', directional: true },
+                    onUpdate: (self) => {
+                        const progress = self.progress
+                        const index = Math.round(progress * (slides.length - 1))
+                        setCurrentSlide(index)
+                    },
                 },
             })
 
@@ -164,15 +168,42 @@ const ProjectsSection = () => {
                                             <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </button>
-                                    <div className="flex gap-2">
-                                        {projects.map((p) => (
-                                            <span key={p.id} className={`h-2 rounded-full ${p.id === project.id ? 'w-8 bg-white' : 'w-2 bg-white/40'}`} />
-                                        ))}
-                                    </div>
                                 </div>
                             </div>
                     </div>
                 ))}
+                
+                {/* Slide Navigation and Indicators Overlay */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-8">
+                    {/* Slide counter */}
+                    <div className="flex items-center gap-3 text-white/70">
+                        <span className="text-lg font-semibold">{String(currentSlide + 1).padStart(2, '0')}</span>
+                        <div className="h-px w-8 bg-white/30" />
+                        <span className="text-lg font-semibold">{String(projects.length).padStart(2, '0')}</span>
+                    </div>
+
+                    {/* Slide indicators */}
+                    <div className="flex gap-2 mx-4">
+                        {projects.map((p, idx) => (
+                            <span 
+                                key={p.id} 
+                                className={`h-2 rounded-full transition-all duration-500 ease-out ${
+                                    idx === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/40'
+                                }`} 
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Scroll hint - only on first slide */}
+                {currentSlide === 0 && (
+                    <div className="absolute bottom-8 right-8 z-20 flex flex-col items-center gap-2 animate-bounce">
+                        <p className="text-white/60 text-sm font-medium">Scroll to explore</p>
+                        <svg className="w-5 h-5 text-white/60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5v14M19 16l-7 7-7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                )}
             </div>
         </section>
     )
