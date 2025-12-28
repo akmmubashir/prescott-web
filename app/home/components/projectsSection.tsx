@@ -143,7 +143,7 @@ export default function ProjectsSection() {
                                 {project.type}
                             </span>
 
-                            <h2 className="anim-in text-5xl md:text-6xl font-semibold leading-tight">
+                            <h2 className="anim-in text-5xl md:text-6xl max-md:text-4xl font-semibold leading-tight">
                                 {project.title}
                             </h2>
 
