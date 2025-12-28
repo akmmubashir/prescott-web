@@ -5,7 +5,7 @@ import Logo from './logo'
 const Footer = () => {
     return (
         <footer className='bg-[#0f0909] text-white'>
-            <div className='max-w-7xl mx-auto px-6 py-12'>
+            <div className='max-w-300 mx-auto max-xl:px-10 max-lg:px-5 py-12'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'>
                     {/* Logo and Description */}
                     <div className='lg:col-span-1'>
@@ -100,7 +100,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                                 <a href="#" className='text-gray-200 hover:text-white transition-colors text-[14px]'>
-                                    info@damac.com
+                                    info@prescott.com
                                 </a>
                             </li>
                         </ul>
@@ -138,7 +138,7 @@ const Footer = () => {
                 <div className='pt-8 border-t border-gray-800'>
                     <div className='flex flex-col max-lg:flex-col-reverse md:flex-row justify-between items-center gap-4'>
                         <p className='text-gray-200 text-[14px] text-center md:text-left'>
-                            © {new Date().getFullYear()} DAMAC. All rights reserved
+                            © {new Date().getFullYear()} PRESCOTT. All rights reserved
                         </p>
                         <div className='flex gap-6'>
                             <Link href="#" className='text-gray-200 hover:text-white transition-colors text-[14px]'>
