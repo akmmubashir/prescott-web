@@ -85,12 +85,12 @@ const ProjectsSection = () => {
             slides.forEach((slide, i) => {
                 if (i === slides.length - 1) return
                 const next = slides[i + 1]
-                tl.to(slide, { autoAlpha: 0, yPercent: -100, duration: 0.6, ease: 'power2.inOut' }, `step-${i}`)
-                    .fromTo(next, { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: 0.6, ease: 'power2.inOut' }, `step-${i}`)
+                tl.to(slide, { autoAlpha: 0, yPercent: -100, duration: 0.8, ease: 'power1.inOut' }, `step-${i}`)
+                    .fromTo(next, { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: 0.8, ease: 'power1.inOut' }, `step-${i}`)
 
                 const inner = Array.from(next.querySelectorAll('.anim-in')) as HTMLElement[]
                 if (inner.length) {
-                    tl.from(inner, { autoAlpha: 0, y: 20, duration: 0.4, ease: 'power2.out', stagger: 0.05 }, `step-${i}+=0.2`)
+                    tl.from(inner, { autoAlpha: 0, y: 15, duration: 0.5, ease: 'power1.out', stagger: 0.06 }, `step-${i}+=0.3`)
                 }
             })
 
@@ -150,14 +150,14 @@ const ProjectsSection = () => {
                                     <p className="anim-in text-white/70 text-[18px] max-lg:text-[16px] max-md:text-[15px] leading-relaxed max-w-2xl">
                                         {project.description}
                                     </p>
-                                    <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3 pt-4">
+                                    {/* <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3 pt-4">
                                         {project.highlights.map((highlight) => (
                                             <div key={highlight} className="anim-in flex items-center gap-2 text-white/80 text-sm">
                                                 <div className="h-1.5 w-1.5 rounded-full bg-white/50" />
                                                 <span>{highlight}</span>
                                             </div>
                                         ))}
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Footer actions */}
@@ -174,16 +174,16 @@ const ProjectsSection = () => {
                 ))}
                 
                 {/* Slide Navigation and Indicators Overlay */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-8">
+                {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-8"> */}
                     {/* Slide counter */}
-                    <div className="flex items-center gap-3 text-white/70">
+                    {/* <div className="flex items-center gap-3 text-white/70">
                         <span className="text-lg font-semibold">{String(currentSlide + 1).padStart(2, '0')}</span>
                         <div className="h-px w-8 bg-white/30" />
                         <span className="text-lg font-semibold">{String(projects.length).padStart(2, '0')}</span>
-                    </div>
+                    </div> */}
 
                     {/* Slide indicators */}
-                    <div className="flex gap-2 mx-4">
+                    {/* <div className="flex gap-2 mx-4">
                         {projects.map((p, idx) => (
                             <span 
                                 key={p.id} 
@@ -192,8 +192,8 @@ const ProjectsSection = () => {
                                 }`} 
                             />
                         ))}
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
 
                 {/* Scroll hint - only on first slide */}
                 {currentSlide === 0 && (
