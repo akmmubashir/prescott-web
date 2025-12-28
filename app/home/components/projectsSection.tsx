@@ -104,7 +104,7 @@ const ProjectsSection = () => {
     }, [])
 
     return (
-        <section id="projects" className="relative w-full bg-[#0f1a1c] z-51">
+        <section id="projects" className="relative w-full bg-[#0f1a1c]">
             {/* Track height controls how long you scroll while pinned */}
             <div style={{ height: `${projects.length * 90}vh` }}>
                 <div ref={containerRef} className="sticky top-0 h-screen w-full overflow-hidden">
@@ -161,7 +161,7 @@ const ProjectsSection = () => {
                                 {/* Footer actions */}
                                 <div className="flex items-center justify-between flex-wrap gap-4">
                                     <button className="px-6 py-3 rounded-full border border-white/30 text-white font-medium flex items-center gap-2 hover:bg-white/10 transition-all duration-300 max-md:w-full max-md:justify-center">
-                                        View Details
+                                        Get A Quote
                                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>

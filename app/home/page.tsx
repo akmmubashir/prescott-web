@@ -13,7 +13,7 @@ import Footer from '../components/footer'
 
 const HomePage = () => {
     return (
-        <div className='min-h-screen overflow-hidden bg-white'>
+        <div className='min-h-screen bg-white'>
             <Header />
             <HeroSection />
             <AboutSection />
