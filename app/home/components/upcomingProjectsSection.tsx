@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
+import Image from 'next/image'
 
 const upcomingProjects = [
     {
@@ -10,6 +11,7 @@ const upcomingProjects = [
         expectedCompletion: 'Q2 2026',
         units: 180,
         status: 'Planning Phase',
+        imageUrl: '/assets/images/1.webp',
     },
     {
         title: 'Waterfront Plaza',
@@ -18,6 +20,7 @@ const upcomingProjects = [
         expectedCompletion: 'Q4 2026',
         units: 95,
         status: 'Pre-Construction',
+        imageUrl: '/assets/images/2.webp',
     },
     {
         title: 'Garden Heights',
@@ -26,6 +29,7 @@ const upcomingProjects = [
         expectedCompletion: 'Q1 2027',
         units: 220,
         status: 'Design Phase',
+        imageUrl: '/assets/images/3.webp',
     },
 ]
 
@@ -59,13 +63,14 @@ const UpcomingProjectsSection = () => {
                             whileInView="visible"
                             viewport={{ once: true, margin: '-100px' }}
                             variants={cardVariants}
-                            className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                            className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
                         >
                             <div className="aspect-video bg-linear-to-br from-blue-500/10 to-purple-500/10 relative overflow-hidden">
                                 <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                                     <span className="text-xs font-semibold text-[#244952]">{project.status}</span>
                                 </div>
+                                <Image src={project.imageUrl} alt={project.title} fill className="object-cover" />
                             </div>
 
                             <div className="p-6">
