@@ -74,7 +74,7 @@ const HeroSection = () => {
                         variants={headingContainer}
                         initial="hidden"
                         animate="visible"
-                        className={`text-[120px] leading-35 items-stretch max-lg:text-[50px] max-lg:leading-16 font-semibold text-white w-full justify-between ${robotoMono.className}`}>
+                        className={`text-[120px] leading-35 items-stretch max-lg:text-[46px] max-lg:leading-16 font-semibold text-white w-full justify-between ${robotoMono.className}`}>
                         {headingLines.map((line) => (
                             <motion.span
                                 key={line}
