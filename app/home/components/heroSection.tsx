@@ -74,7 +74,7 @@ const HeroSection = () => {
                         variants={headingContainer}
                         initial="hidden"
                         animate="visible"
-                        className={`text-[120px] leading-35 items-stretch max-lg:text-[50px] max-lg:leading-18 font-semibold text-white w-full justify-between ${robotoMono.className}`}>
+                        className={`text-[120px] leading-35 items-stretch max-lg:text-[50px] max-lg:leading-16 font-semibold text-white w-full justify-between ${robotoMono.className}`}>
                         {headingLines.map((line) => (
                             <motion.span
                                 key={line}
@@ -109,7 +109,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.6, delay: 1.5 }}
                         className='col-span-8 max-lg:col-span-full flex items-center gap-4'
                     >
-                        <p className='text-[32px] max-lg:text-[22px] font-medium'>
+                        <p className='text-[32px] max-lg:text-[20px] font-medium'>
                             For nearly two decades, Prescott has shaped Dubai&apos;s skyline with quality-driven, innovative developments built on trust and lasting value.    </p>
                     </motion.div>
                     <motion.div
