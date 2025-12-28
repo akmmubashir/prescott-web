@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             <motion.div 
-                                className="h-full rounded-3xl  border-[#e7ecf0] bg-linear-to-br from-white via-white/95 to-[#f8fafc] shadow-sm p-8 max-md:p-6 flex flex-col gap-4 group"
+                                className="h-full rounded-3xl border border-[#e7ecf0] bg-linear-to-br from-white via-white/95 to-[#f8fafc] shadow-sm p-8 max-md:p-6 flex flex-col gap-4 group"
                                 whileHover={{ translateY: -8, borderColor: '#244952', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
                                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             >

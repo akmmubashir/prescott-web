@@ -118,7 +118,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.6, delay: 1.7 }}
                         className='col-span-4 max-lg:col-span-full flex justify-end max-lg:justify-start'
                     >
-                        <CommonButton text="Explore Our Projects" model="secondary" icon />
+                        <CommonButton text="Explore Our Projects" model="primary" icon />
                     </motion.div>
                 </div>
             </div>
