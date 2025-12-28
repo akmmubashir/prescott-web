@@ -8,6 +8,9 @@ import ProjectsSection from './components/projectsSection'
 import TestimonialsSection from './components/testimonialsSection'
 import ContactSection from './components/contactSection'
 import Footer from '../components/footer'
+// import ArticlesSection from './components/articlesSection'
+// import AwardsSection from './components/awardsSection'
+import UpcomingProjectsSection from './components/upcomingProjectsSection'
 
 // type Props = {}
 
@@ -20,8 +23,11 @@ const HomePage = () => {
             <ServicesSection />
             <DifferentiatorsSection />
             <ProjectsSection />
+            <UpcomingProjectsSection/>
             <TestimonialsSection />
             <ContactSection />
+            {/* <AwardsSection /> */}
+            {/* <ArticlesSection /> */}
             <Footer />
         </div>
     )

@@ -119,7 +119,7 @@ const ProjectsSection = () => {
                         </div>
 
                             {/* Content */}
-                            <div className="relative h-full max-w-300 mx-auto p-8 max-lg:p-6 max-md:p-5 flex flex-col justify-between">
+                            <div className="relative h-full max-w-300 mx-auto max-xl:px-10 max-lg:px-5 py-24 max-lg:py-16 flex flex-col justify-between">
                                 {/* Header meta */}
                                 <div className="flex items-center justify-between">
                                     <p className="anim-in text-white uppercase tracking-[0.2em] text-sm font-semibold">

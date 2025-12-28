@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
+import { QuoteIcon } from '@/app/components/icons'
 
 const testimonials = [
     {
@@ -58,18 +59,18 @@ const TestimonialsSection = () => {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                         >
-                            <motion.div 
-                                className="h-full rounded-3xl border border-[#e7ecf0] bg-linear-to-br from-white via-white/95 to-[#f8fafc] shadow-sm p-8 max-md:p-6 flex flex-col gap-4 group"
+                            <motion.div
+                                className="h-full rounded-3xl border-[#e7ecf0] bg-linear-to-br from-white via-white/95 to-[#f8fafc] shadow-sm p-8 max-md:p-6 flex flex-col gap-4 group"
                                 whileHover={{ translateY: -8, borderColor: '#244952', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
                                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                             >
-                                <motion.div 
+                                <motion.div
                                     className="flex items-start justify-between"
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 + index * 0.1 }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="flex gap-1"
                                         whileHover={{ scale: 1.1 }}
                                     >
@@ -79,20 +80,19 @@ const TestimonialsSection = () => {
                                             </motion.svg>
                                         ))}
                                     </motion.div>
-                                    <motion.svg className="w-6 h-6 text-[#244952]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 21c3 0 7-1 7-8V5c0-1.25-4.5-5-7-5S0 3.75 0 5c0 5 3 7 3 8s-2 7-2 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                        <path d="M15 21c3 0 7-1 7-8V5c0-1.25-4.5-5-7-5s-7 3.75-7 5c0 5 3 7 3 8s-2 7-2 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </motion.svg>
+                                    <motion.div>
+                                        <QuoteIcon size="w-6 h-6" color="fill-[#244952]" />
+                                    </motion.div>
                                 </motion.div>
                                 <p className="text-[17px] max-md:text-[16px] text-[#0f1a1c] leading-relaxed italic font-medium">&quot;{item.quote}&quot;</p>
                                 <div className="pt-4 border-t border-[#e7ecf0]" />
-                                <motion.div 
+                                <motion.div
                                     className="flex items-center gap-4"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.2 + index * 0.1 }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className="h-12 w-12 rounded-full bg-linear-to-br from-[#244952] to-[#10242a] flex items-center justify-center text-white font-bold text-sm"
                                         whileHover={{ scale: 1.15, rotate: 360 }}
                                         transition={{ type: 'spring', stiffness: 200 }}
