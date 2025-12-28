@@ -85,12 +85,12 @@ const ProjectsSection = () => {
             slides.forEach((slide, i) => {
                 if (i === slides.length - 1) return
                 const next = slides[i + 1]
-                tl.to(slide, { autoAlpha: 0, yPercent: -opts.y, scale: opts.scaleOut, duration: 0.5, ease: 'power2.inOut' }, `step-${i}`)
-                    .fromTo(next, { autoAlpha: 0, yPercent: opts.y, scale: opts.scaleIn }, { autoAlpha: 1, yPercent: 0, scale: 1, duration: 0.5, ease: 'power2.inOut' }, `step-${i}`)
+                tl.to(slide, { autoAlpha: 0, yPercent: -100, duration: 0.6, ease: 'power2.inOut' }, `step-${i}`)
+                    .fromTo(next, { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: 0.6, ease: 'power2.inOut' }, `step-${i}`)
 
                 const inner = Array.from(next.querySelectorAll('.anim-in')) as HTMLElement[]
                 if (inner.length) {
-                    tl.from(inner, { autoAlpha: 0, y: 16, duration: 0.45, ease: 'power2.out', stagger: 0.08 }, `step-${i}+=0.1`)
+                    tl.from(inner, { autoAlpha: 0, y: 20, duration: 0.4, ease: 'power2.out', stagger: 0.05 }, `step-${i}+=0.2`)
                 }
             })
 
@@ -107,7 +107,7 @@ const ProjectsSection = () => {
     }, [])
 
     return (
-        <section id="projects" className="relative w-full bg-[#0f1a1c]">
+        <section id="projects" className="relative w-full bg-[#0f1a1c] z-51">
             {/* Pinned container; ScrollTrigger adds pin spacing for scroll length */}
             <div ref={containerRef} className="sticky top-0 h-screen w-full overflow-hidden">
                 {projects.map((project, idx) => (
