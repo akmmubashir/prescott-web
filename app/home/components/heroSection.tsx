@@ -102,7 +102,7 @@ const HeroSection = () => {
                         Building Trust, Crafting Tomorrow
                     </motion.h2>
                 </div>
-                <div className='grid grid-cols-12 gap-10 max-lg:gap-8 items-end max-lg:items-center border-t pt-10 max-lg:pt-5'>
+                <div className='grid grid-cols-12 gap-10 max-lg:gap-8 items-end max-lg:items-center border-t border-white pt-10 max-lg:pt-5'>
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
