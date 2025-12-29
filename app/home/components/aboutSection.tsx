@@ -68,6 +68,20 @@ const AboutSection = () => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                 >
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+                        className='absolute top-0 right-10 max-lg:right-5 z-10 w-16.25 max-lg:w-12.5'>
+                        <Image
+                            src="/assets/common/award.webp"
+                            alt="Decorative Bottom Left"
+                            width={100}
+                            height={400}
+                            className="w-full h-auto"
+                        />
+                    </motion.div>
                     <div className="relative overflow-hidden rounded-4xl shadow-2xl bg-linear-to-br from-[#10242a] via-[#1a3a45] to-[#0f1a1c]">
                         <motion.div
                             className="absolute inset-0 bg-linear-to-br from-white/15 via-transparent to-white/5"
@@ -85,7 +99,7 @@ const AboutSection = () => {
                                 <CrownIcon size="w-8 h-8" color="stroke-white" />
                                 <span className="text-sm font-semibold uppercase tracking-widest text-white/60">Premium Developer</span>
                             </motion.div>
-                            <h4 className="text-[32px] max-lg:text-[24px] font-semibold leading-tight">Driven by purpose, guided by quality.</h4>
+                            <h4 className="text-[32px] max-lg:text-[24px] font-semibold leading-tight w-2/3">Driven by purpose, guided by quality.</h4>
                             <p className="text-[17px] max-lg:text-[16px] leading-relaxed text-white/80">
                                 Each project is envisioned to create lasting value for residents and investors alike, blending timeless design with thoughtful amenities.
                             </p>
