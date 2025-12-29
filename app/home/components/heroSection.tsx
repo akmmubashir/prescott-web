@@ -109,7 +109,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.6, delay: 1.5 }}
                         className='col-span-8 max-lg:col-span-full flex items-center gap-4'
                     >
-                        <p className='text-[32px] max-lg:text-[20px] font-medium'>
+                        <p className='text-white text-[32px] max-lg:text-[20px] font-medium'>
                             For nearly two decades, Prescott has shaped Dubai&apos;s skyline with quality-driven, innovative developments built on trust and lasting value.    </p>
                     </motion.div>
                     <motion.div
